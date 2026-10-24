@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17100c">
-<meta name="description" content="Feijuca Carioca — feijoada preparada com amor, carinho e sabor de comida de verdade. Consulte nosso cardápio e faça seu pedido!">
-<title>Feijuca Carioca | Sabor feito com amor</title>
+<meta name="theme-color" content="#17130f">
+<meta name="description" content="Feijuca Carioca — feijoada feita com amor, carinho e aquele sabor brasileiro especial. Consulte nosso atendimento e faça seu pedido pelo WhatsApp.">
+<title>Feijuca Carioca | O sabor que reúne</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,168 +13,230 @@
 
 <style>
 :root {
-  --bg: #17100c;
-  --bg2: #211711;
-  --card: #291e17;
-  --cream: #fff4e7;
-  --muted: #c0ac98;
-  --orange: #ed8b48;
-  --orange2: #ffb16f;
-  --line: rgba(255,244,231,.12);
-  --green: #25d366;
-  --max: 1180px;
+  --bg: #17130f;
+  --bg-light: #211a14;
+  --cream: #fff7eb;
+  --cream-dark: #eee0cd;
+  --orange: #e77b36;
+  --orange-light: #ffad69;
+  --text: #fff7eb;
+  --muted: #c4b6a6;
+  --border: rgba(255,247,235,.12);
+  --radius: 22px;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
 body {
   background: var(--bg);
-  color: var(--cream);
-  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  font-family: var(--sans);
   line-height: 1.65;
   overflow-x: hidden;
 }
 
-body, button, a { -webkit-tap-highlight-color: transparent; }
+body, button, a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-img { display: block; max-width: 100%; }
+button {
+  font: inherit;
+}
 
-button { font: inherit; }
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
 
 .container {
-  width: min(var(--max), calc(100% - 40px));
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--orange-light);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--orange);
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  letter-spacing: -1.3px;
+}
+
+.section-copy {
+  max-width: 560px;
+  color: var(--muted);
+  margin-top: 17px;
+  font-size: .98rem;
+}
+
+.section-heading {
+  margin-bottom: 42px;
+}
+
+.section-heading.center {
+  text-align: center;
+}
+
+.section-heading.center .eyebrow {
+  justify-content: center;
+}
+
+.section-heading.center .section-copy {
   margin-inline: auto;
 }
-
-.topbar {
-  background: #100b08;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  text-align: center;
-  padding: 9px 14px;
-  font-size: 12px;
-  letter-spacing: .5px;
-}
-
-.topbar strong { color: var(--orange2); }
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(23,16,12,.94);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-}
-
-.logo-icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--orange);
-  color: #21120a;
-  font-size: 24px;
-  flex-shrink: 0;
-}
-
-.logo-text {
-  font-family: "Playfair Display", serif;
-  font-weight: 800;
-  font-size: 23px;
-  line-height: 1.1;
-}
-
-.logo-text span {
-  color: var(--orange2);
-}
-
-.logo small {
-  display: block;
-  margin-top: 5px;
-  font-family: "DM Sans", sans-serif;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--muted);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
-
-.nav-links > a:not(.btn) {
-  font-size: 13px;
-  color: #e5d7ca;
-  transition: color .2s;
-}
-
-.nav-links > a:not(.btn):hover { color: var(--orange2); }
 
 .btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 14px 21px;
-  border: 1px solid transparent;
-  border-radius: 7px;
-  background: var(--orange);
-  color: #24130a;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform .2s, background .2s, box-shadow .2s;
+  min-height: 52px;
+  padding: 14px 23px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 700;
+  transition: transform .25s ease, background .25s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  background: var(--orange2);
-  box-shadow: 0 8px 28px rgba(237,139,72,.18);
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #21130b;
+  box-shadow: 0 8px 30px rgba(231,123,54,.17);
+}
+
+.btn-primary:hover {
+  background: var(--orange-light);
 }
 
 .btn-outline {
-  background: transparent;
-  border-color: rgba(255,177,111,.55);
+  border: 1px solid rgba(255,247,235,.3);
   color: var(--cream);
 }
 
 .btn-outline:hover {
-  background: rgba(237,139,72,.1);
-  color: var(--orange2);
+  background: rgba(255,247,235,.08);
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(23,19,15,.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--orange);
+  color: #21130b;
+  border-radius: 14px 14px 14px 5px;
+  font-size: 1.4rem;
+}
+
+.brand-name {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.brand-caption {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: .65rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a:not(.btn) {
+  color: #ded1c1;
+  font-size: .84rem;
+  transition: color .2s;
+}
+
+.nav-links a:not(.btn):hover {
+  color: var(--orange-light);
 }
 
 .menu-toggle {
   display: none;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   color: var(--cream);
-  background: var(--card);
-  font-size: 22px;
+  background: transparent;
+  font-size: 1.4rem;
   cursor: pointer;
 }
 
@@ -187,6 +249,7 @@ header {
   align-items: center;
   isolation: isolate;
   overflow: hidden;
+  background: #211810;
 }
 
 .hero::before {
@@ -195,58 +258,36 @@ header {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(23,16,12,.98) 0%, rgba(23,16,12,.90) 38%, rgba(23,16,12,.42) 72%, rgba(23,16,12,.25) 100%),
-    linear-gradient(0deg, var(--bg) 0%, transparent 25%),
+    linear-gradient(90deg, rgba(23,19,15,.97) 0%, rgba(23,19,15,.88) 38%, rgba(23,19,15,.30) 100%),
+    linear-gradient(0deg, rgba(23,19,15,.65), transparent 45%),
     url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2000&q=85") center/cover;
-  transform: scale(1.02);
 }
 
 .hero-content {
-  padding-top: 80px;
-  padding-bottom: 100px;
-  max-width: 740px;
+  padding-block: 100px 110px;
+  max-width: 720px;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--orange2);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2.3px;
-}
-
-.eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: var(--orange);
-}
-
-h1, h2, h3 {
-  font-family: "Playfair Display", serif;
-  line-height: 1.12;
+.hero .eyebrow {
+  margin-bottom: 25px;
 }
 
 .hero h1 {
-  margin-top: 25px;
-  font-size: clamp(48px, 7.8vw, 88px);
-  letter-spacing: -2.5px;
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  letter-spacing: -3px;
+  max-width: 780px;
 }
 
 .hero h1 em {
-  color: var(--orange2);
-  font-style: normal;
+  color: var(--orange-light);
+  font-weight: 600;
 }
 
 .hero-description {
-  max-width: 550px;
+  max-width: 500px;
+  color: #e2d5c6;
   margin-top: 25px;
-  color: #e0d0c0;
-  font-size: 16px;
-  line-height: 1.9;
+  font-size: 1.03rem;
 }
 
 .hero-actions {
@@ -256,233 +297,256 @@ h1, h2, h3 {
   margin-top: 32px;
 }
 
-.hero-meta {
+.hero-proof {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 35px;
-  color: #e6d4c2;
-  font-size: 12px;
+  gap: 25px;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.18);
 }
 
-.hero-meta span { display: flex; gap: 8px; align-items: center; }
-.hero-meta b { color: var(--orange2); }
+.proof-item {
+  color: #e8dbcc;
+  font-size: .79rem;
+}
+
+.proof-item strong {
+  display: block;
+  color: var(--cream);
+  font-size: .98rem;
+}
+
+.stars {
+  color: #ffba63;
+  letter-spacing: 2px;
+}
 
 /* STRIP */
 
-.strip {
+.flavor-strip {
   background: var(--orange);
-  color: #27150b;
-  padding: 15px 0;
+  color: #28170c;
   overflow: hidden;
 }
 
 .strip-inner {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 17px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  gap: 20px 35px;
+  padding: 19px 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
-.strip .dot { opacity: .55; }
-
-/* SECTIONS */
-
-section { padding: 100px 0; }
-
-.section-head {
-  max-width: 700px;
-  margin-bottom: 45px;
-}
-
-.section-head.center {
-  margin-inline: auto;
-  text-align: center;
-}
-
-.section-head.center .eyebrow { justify-content: center; }
-
-.section-head h2 {
-  margin-top: 18px;
-  font-size: clamp(36px, 5vw, 56px);
-  letter-spacing: -1px;
-}
-
-.section-head h2 span { color: var(--orange2); }
-
-.section-head p {
-  margin-top: 17px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.9;
+.strip-inner span::before {
+  content: "✦";
+  margin-right: 12px;
+  font-family: var(--sans);
 }
 
 /* STORY */
 
+.story {
+  padding: 110px 0;
+}
+
 .story-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
   align-items: center;
+  gap: 75px;
+}
+
+.story-visual {
+  position: relative;
+  min-height: 460px;
 }
 
 .story-image {
-  position: relative;
-  min-height: 480px;
+  height: 460px;
+  border-radius: 160px 18px 18px 18px;
+  object-position: center;
 }
 
-.story-image img {
-  width: 100%;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.image-note {
+.story-note {
   position: absolute;
-  bottom: -18px;
-  right: -16px;
+  right: -18px;
+  bottom: 25px;
   max-width: 235px;
-  padding: 20px;
-  background: var(--orange);
-  color: #28170e;
-  border-radius: 7px;
-  font-family: "Playfair Display", serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
+  padding: 23px;
+  background: var(--cream);
+  color: #352317;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,.2);
 }
 
-.story-copy h2 {
-  margin-top: 18px;
-  font-size: clamp(34px, 4.5vw, 52px);
+.story-note strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.3rem;
 }
 
-.story-copy h2 span { color: var(--orange2); }
+.story-note span {
+  display: block;
+  margin-top: 4px;
+  color: #705b49;
+  font-size: .8rem;
+}
 
-.story-copy p {
-  margin-top: 20px;
+.story-content h2 {
+  margin-top: 17px;
+}
+
+.story-content p {
+  margin-top: 19px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 2;
 }
 
 .story-points {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 17px;
   margin-top: 30px;
 }
 
 .story-point {
-  border-top: 1px solid var(--line);
-  padding-top: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.point-icon {
+  flex: 0 0 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(231,123,54,.13);
+  color: var(--orange-light);
 }
 
 .story-point strong {
   display: block;
-  color: var(--orange2);
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
+  font-size: .95rem;
 }
 
-.story-point small {
-  display: block;
-  color: var(--muted);
-  margin-top: 5px;
-  font-size: 11px;
+.story-point p {
+  margin-top: 2px;
+  font-size: .85rem;
 }
 
 /* MENU */
 
-.menu-section { background: #1d140f; }
+.menu-section {
+  padding: 105px 0;
+  background: #211a14;
+}
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
 }
 
 .food-card {
   overflow: hidden;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #19140f;
   transition: transform .3s, border-color .3s;
 }
 
 .food-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(237,139,72,.6);
+  border-color: rgba(231,123,54,.6);
 }
 
-.food-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
+.food-image-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #302319;
+}
+
+.food-image {
+  height: 100%;
   transition: transform .5s;
 }
 
-.food-card:hover img { transform: scale(1.04); }
-
-.food-photo { overflow: hidden; }
-
-.food-info { padding: 23px; }
+.food-card:hover .food-image {
+  transform: scale(1.06);
+}
 
 .food-tag {
-  color: var(--orange2);
-  font-size: 10px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #28170c;
+  font-size: .7rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
 }
 
-.food-info h3 {
-  margin-top: 10px;
-  font-size: 24px;
+.food-body {
+  padding: 23px;
 }
 
-.food-info p {
-  min-height: 68px;
+.food-body h3 {
+  font-size: 1.55rem;
+}
+
+.food-body p {
+  min-height: 75px;
   margin-top: 11px;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: .86rem;
 }
 
 .food-bottom {
-  margin-top: 20px;
-  padding-top: 17px;
-  border-top: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  padding-top: 18px;
+  margin-top: 15px;
+  border-top: 1px solid var(--border);
 }
 
-.food-bottom small {
-  color: var(--muted);
-  font-size: 10px;
+.food-bottom span {
+  color: var(--orange-light);
+  font-size: .8rem;
+  font-weight: 700;
 }
 
-.food-bottom a {
-  color: var(--orange2);
-  font-size: 12px;
-  font-weight: 800;
+.food-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.food-order:hover {
+  color: var(--orange-light);
 }
 
 .menu-disclaimer {
   margin-top: 24px;
-  color: var(--muted);
+  color: #b8a895;
   text-align: center;
-  font-size: 11px;
+  font-size: .8rem;
 }
 
 /* DIFFERENTIALS */
+
+.values {
+  padding: 105px 0;
+}
 
 .values-grid {
   display: grid;
@@ -492,212 +556,233 @@ section { padding: 100px 0; }
 
 .value-card {
   padding: 30px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255,255,255,.018);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #211a14, #19140f);
 }
 
 .value-icon {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 8px;
-  background: rgba(237,139,72,.12);
-  color: var(--orange2);
-  font-size: 24px;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
 }
 
-.value-card h3 { margin-top: 20px; font-size: 23px; }
+.value-card h3 {
+  font-size: 1.35rem;
+}
 
 .value-card p {
-  margin-top: 12px;
+  margin-top: 11px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: .88rem;
 }
 
-/* GALLERY */
+/* REVIEW */
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
-  grid-template-rows: 220px 220px;
-  gap: 14px;
+.review-section {
+  padding: 90px 0;
+  background: var(--cream);
+  color: #2b2119;
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  background: var(--card);
-}
-
-.gallery-item:first-child { grid-row: span 2; }
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s;
-}
-
-.gallery-item:hover img { transform: scale(1.07); }
-
-.gallery-item::after {
-  content: "";
-  position: absolute;
-  inset: 45% 0 0;
-  background: linear-gradient(transparent, rgba(0,0,0,.72));
-}
-
-.gallery-label {
-  position: absolute;
-  z-index: 1;
-  bottom: 17px;
-  left: 18px;
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
-}
-
-/* REVIEWS */
-
-.review-panel {
+.review-layout {
   display: grid;
   grid-template-columns: .8fr 1.2fr;
-  gap: 35px;
-  padding: 40px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 10px;
   align-items: center;
+  gap: 65px;
+}
+
+.review-section .eyebrow {
+  color: #a64b1b;
 }
 
 .rating-number {
-  font-family: "Playfair Display", serif;
-  font-size: 64px;
+  margin-top: 16px;
+  font-family: var(--serif);
+  font-size: 5rem;
   line-height: 1;
 }
 
-.stars { color: #ffc46a; letter-spacing: 3px; }
-
-.rating-copy {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 12px;
-}
-
-.review-quote {
-  border-left: 2px solid var(--orange);
-  padding-left: 25px;
-  color: #eadaca;
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-  line-height: 1.65;
-}
-
-.review-note {
+.rating-caption {
   margin-top: 14px;
-  color: var(--muted);
-  font-family: "DM Sans", sans-serif;
-  font-size: 11px;
+  color: #756352;
+  font-size: .9rem;
 }
 
-/* ORDER CTA */
-
-.order-section {
-  padding: 85px 0;
-  background:
-    linear-gradient(90deg, rgba(31,19,12,.96), rgba(31,19,12,.84)),
-    url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=80") center/cover;
+.review-card {
+  padding: 34px;
+  border: 1px solid #e6d5c2;
+  border-radius: 20px;
+  background: #fffdf9;
 }
 
-.order-box {
-  display: flex;
+.review-card .stars {
+  margin-bottom: 17px;
+  color: #d8792e;
+}
+
+.review-card blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  line-height: 1.45;
+}
+
+.review-card small {
+  display: block;
+  margin-top: 20px;
+  color: #756352;
+}
+
+/* DELIVERY CTA */
+
+.delivery {
+  padding: 100px 0;
+}
+
+.delivery-panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
   align-items: center;
-  justify-content: space-between;
   gap: 30px;
+  padding: 55px;
+  border: 1px solid rgba(231,123,54,.3);
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(231,123,54,.17), transparent 45%),
+    #211a14;
 }
 
-.order-box h2 {
+.delivery-panel h2 {
+  margin-top: 17px;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.delivery-panel p {
+  max-width: 530px;
   margin-top: 15px;
-  font-size: clamp(34px, 5vw, 54px);
+  color: var(--muted);
 }
 
-.order-box h2 span { color: var(--orange2); }
-
-.order-box p {
-  max-width: 600px;
-  margin-top: 14px;
-  color: #d5c2b0;
-  font-size: 13px;
-  line-height: 1.9;
+.delivery-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
 }
 
-.order-box .btn { flex-shrink: 0; }
+.delivery-action small {
+  color: var(--muted);
+  font-size: .78rem;
+}
 
-/* CONTACT */
+/* LOCATION */
 
-.contact-grid {
+.location {
+  padding: 0 0 105px;
+}
+
+.location-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  gap: 35px;
 }
 
-.contact-card {
-  padding: 30px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  border-radius: 8px;
+.location-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #211a14;
 }
 
-.contact-card h3 { font-size: 25px; }
-
-.contact-card p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 13px;
-  line-height: 1.9;
+.location-card h3 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
 }
 
-.contact-card .btn { margin-top: 22px; }
-
-.contact-list {
-  margin-top: 20px;
-  display: grid;
-  gap: 17px;
-}
-
-.contact-row {
+.info-row {
   display: flex;
-  gap: 13px;
   align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.contact-row .symbol {
-  color: var(--orange2);
-  font-size: 20px;
+.info-row:last-of-type {
+  border-bottom: 0;
 }
 
-.contact-row strong {
+.info-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(231,123,54,.13);
+  color: var(--orange-light);
+}
+
+.info-row strong {
   display: block;
-  font-size: 13px;
+  font-size: .9rem;
 }
 
-.contact-row span {
-  display: block;
-  color: var(--muted);
-  font-size: 12px;
+.info-row p {
   margin-top: 3px;
+  color: var(--muted);
+  font-size: .85rem;
+  overflow-wrap: anywhere;
 }
 
-footer {
-  padding: 40px 0 25px;
-  border-top: 1px solid var(--line);
-  background: #100b08;
+.location-note {
+  margin-top: 20px;
+  color: #b8a895;
+  font-size: .8rem;
 }
 
-.footer-main {
+.location-visual {
+  position: relative;
+  min-height: 370px;
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    linear-gradient(0deg, rgba(23,19,15,.75), rgba(23,19,15,.05)),
+    url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85") center/cover;
+}
+
+.location-overlay {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  padding: 23px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 15px;
+  background: rgba(23,19,15,.84);
+  backdrop-filter: blur(12px);
+}
+
+.location-overlay strong {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+}
+
+.location-overlay p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 45px 0 25px;
+  border-top: 1px solid var(--border);
+  background: #120f0c;
+}
+
+.footer-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -705,54 +790,63 @@ footer {
   padding-bottom: 30px;
 }
 
-.footer-note {
-  max-width: 430px;
+.footer-message {
+  max-width: 350px;
   margin-top: 13px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: .85rem;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  color: #d5c2b0;
-  font-size: 12px;
+  color: #d6c8b8;
+  font-size: .84rem;
+}
+
+.footer-links a:hover {
+  color: var(--orange-light);
 }
 
 .footer-bottom {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-  color: #998573;
-  font-size: 10px;
+  gap: 15px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  color: #938577;
+  font-size: .75rem;
 }
 
-.footer-bottom strong { color: var(--orange2); }
+/* WHATSAPP FLOAT */
 
 .whatsapp-float {
   position: fixed;
-  z-index: 90;
   right: 20px;
-  bottom: 20px;
-  width: 58px;
-  height: 58px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--green);
-  color: white;
-  font-size: 27px;
-  box-shadow: 0 6px 25px rgba(0,0,0,.35);
+  bottom: 22px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 55px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #092b15;
+  box-shadow: 0 10px 35px rgba(0,0,0,.3);
+  font-weight: 800;
+  font-size: .85rem;
   transition: transform .2s;
 }
 
-.whatsapp-float:hover { transform: translateY(-4px) scale(1.04); }
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+}
 
-/* ANIMATIONS */
+/* ANIMATION */
 
 .reveal {
   opacity: 0;
@@ -766,652 +860,776 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   *, *::before, *::after {
-    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
     transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
-  .nav-links { gap: 15px; }
-  .nav-links > a:not(.btn) { font-size: 12px; }
-  .nav-links .btn { padding: 11px 13px; }
-  .story-grid { gap: 40px; }
-  .menu-grid { grid-template-columns: repeat(2, 1fr); }
-  .food-card:last-child { grid-column: 1 / -1; }
-  .food-card:last-child img { height: 260px; }
-  .gallery-grid { grid-template-rows: 190px 190px; }
+  .nav-links {
+    gap: 17px;
+  }
+
+  .nav-links a:not(.btn) {
+    font-size: .78rem;
+  }
+
+  .story-grid {
+    gap: 45px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .review-layout {
+    gap: 35px;
+  }
+
+  .delivery-panel {
+    padding: 38px;
+  }
 }
 
-@media (max-width: 680px) {
-  .container { width: min(100% - 30px, var(--max)); }
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 32px, 520px);
+  }
 
-  .nav { min-height: 72px; gap: 10px; }
+  .nav {
+    min-height: 70px;
+  }
 
-  .logo-icon { width: 40px; height: 40px; font-size: 21px; }
+  .brand-name {
+    font-size: 1.05rem;
+  }
 
-  .logo-text { font-size: 19px; }
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+  }
 
-  .logo small { font-size: 8px; letter-spacing: 1.5px; }
-
-  .menu-toggle { display: block; flex-shrink: 0; }
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
 
   .nav-links {
-    display: none;
     position: absolute;
     top: calc(100% + 1px);
-    left: 0;
     right: 0;
-    padding: 22px 20px 25px;
-    flex-direction: column;
+    left: 0;
+    display: none;
     align-items: stretch;
     gap: 0;
-    background: #17100c;
-    border-bottom: 1px solid var(--line);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--border);
+    background: #17130f;
   }
 
-  .nav-links.open { display: flex; }
-
-  .nav-links > a:not(.btn) {
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
   }
 
-  .nav-links .btn { margin-top: 15px; }
+  .nav-links a:not(.btn) {
+    padding: 13px 3px;
+    border-bottom: 1px solid var(--border);
+    font-size: .94rem;
+  }
 
-  .hero { min-height: 640px; }
+  .nav-links .btn {
+    margin-top: 15px;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
 
   .hero::before {
     background:
-      linear-gradient(90deg, rgba(23,16,12,.91), rgba(23,16,12,.68)),
-      linear-gradient(0deg, var(--bg), transparent 45%),
+      linear-gradient(90deg, rgba(23,19,15,.88), rgba(23,19,15,.48)),
+      linear-gradient(0deg, rgba(23,19,15,.75), transparent 80%),
       url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85") center/cover;
   }
 
-  .hero-content { padding-top: 70px; padding-bottom: 80px; }
-
-  .hero h1 { font-size: clamp(45px, 12vw, 66px); letter-spacing: -1.5px; }
-
-  .hero-description { font-size: 14px; }
-
-  .hero-actions { flex-direction: column; align-items: stretch; }
-
-  .hero-actions .btn { width: 100%; }
-
-  .hero-meta { gap: 12px 17px; font-size: 11px; }
-
-  .strip-inner { gap: 9px; font-size: 9px; letter-spacing: .8px; }
-
-  section { padding: 72px 0; }
-
-  .section-head { margin-bottom: 30px; }
-
-  .section-head h2 { font-size: 38px; }
-
-  .story-grid { grid-template-columns: 1fr; gap: 45px; }
-
-  .story-image { min-height: 330px; margin-right: 9px; }
-
-  .story-image img { height: 350px; }
-
-  .image-note { right: -8px; bottom: -20px; font-size: 17px; max-width: 195px; }
-
-  .story-copy h2 { font-size: 39px; }
-
-  .story-points { gap: 16px; }
-
-  .menu-grid { grid-template-columns: 1fr; gap: 18px; }
-
-  .food-card:last-child { grid-column: auto; }
-
-  .food-card img, .food-card:last-child img { height: 235px; }
-
-  .food-info p { min-height: 0; }
-
-  .values-grid { grid-template-columns: 1fr; gap: 14px; }
-
-  .value-card { padding: 24px; }
-
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 260px 170px 170px;
-    gap: 9px;
+  .hero-content {
+    padding-block: 90px 75px;
   }
 
-  .gallery-item:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .hero h1 {
+    font-size: clamp(3.1rem, 14vw, 5rem);
+    letter-spacing: -1.8px;
+  }
 
-  .gallery-label { font-size: 15px; bottom: 12px; left: 12px; }
+  .hero-description {
+    font-size: .94rem;
+  }
 
-  .review-panel { grid-template-columns: 1fr; gap: 25px; padding: 27px; }
+  .hero-proof {
+    gap: 17px 22px;
+  }
 
-  .rating-number { font-size: 55px; }
+  .strip-inner {
+    gap: 10px 18px;
+    padding: 15px 0;
+    font-size: .88rem;
+  }
 
-  .review-quote { font-size: 19px; padding-left: 18px; }
+  .story,
+  .menu-section,
+  .values {
+    padding: 75px 0;
+  }
 
-  .order-section { padding: 65px 0; }
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
 
-  .order-box { flex-direction: column; align-items: stretch; }
+  .story-visual {
+    min-height: 350px;
+    margin-right: 12px;
+  }
 
-  .order-box h2 { font-size: 39px; }
+  .story-image {
+    height: 350px;
+    border-radius: 100px 16px 16px 16px;
+  }
 
-  .order-box .btn { width: 100%; }
+  .story-note {
+    right: -12px;
+    bottom: 15px;
+    max-width: 190px;
+    padding: 17px;
+  }
 
-  .contact-grid { grid-template-columns: 1fr; }
+  .story-note strong {
+    font-size: 1.12rem;
+  }
 
-  .contact-card { padding: 25px; }
+  .section-heading {
+    margin-bottom: 30px;
+  }
 
-  .footer-main { align-items: flex-start; flex-direction: column; }
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
 
-  .footer-links { gap: 14px; }
+  .food-image-wrap {
+    height: 245px;
+  }
 
-  .footer-bottom { flex-direction: column; }
+  .food-body p {
+    min-height: 0;
+  }
 
-  .whatsapp-float { width: 54px; height: 54px; right: 14px; bottom: 14px; }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    padding: 25px;
+  }
+
+  .review-section {
+    padding: 75px 0;
+  }
+
+  .review-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .rating-number {
+    font-size: 4.3rem;
+  }
+
+  .review-card {
+    padding: 25px;
+  }
+
+  .delivery {
+    padding: 75px 0;
+  }
+
+  .delivery-panel {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+    gap: 25px;
+  }
+
+  .delivery-action {
+    align-items: stretch;
+  }
+
+  .location {
+    padding-bottom: 75px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .location-card {
+    padding: 24px;
+  }
+
+  .location-visual {
+    min-height: 320px;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    gap: 15px 20px;
+  }
+
+  .whatsapp-float {
+    right: 13px;
+    bottom: 13px;
+    min-height: 49px;
+    padding: 0 16px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  FEITO COM CARINHO, TEMPERADO COM TRADIÇÃO <strong>♥</strong>
-</div>
-
-<header>
+<header class="header">
   <div class="container nav">
-    <a href="#inicio" class="logo" aria-label="Feijuca Carioca - início">
-      <div class="logo-icon">🍲</div>
-      <div class="logo-text">
-        Feijuca <span>Carioca</span>
-        <small>Sabor que abraça</small>
-      </div>
+
+    <a href="#inicio" class="brand" aria-label="Feijuca Carioca, início">
+      <span class="brand-mark">🍲</span>
+      <span>
+        <span class="brand-name">Feijuca Carioca</span>
+        <span class="brand-caption">Sabor brasileiro</span>
+      </span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Abrir menu" aria-expanded="false">☰</button>
 
     <nav class="nav-links" id="navLinks">
       <a href="#historia">Nossa essência</a>
       <a href="#cardapio">Cardápio</a>
-      <a href="#galeria">Galeria</a>
+      <a href="#avaliacoes">Avaliações</a>
       <a href="#contato">Contato</a>
-      <a class="btn" href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Feijuca%20Carioca%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20card%C3%A1pio." target="_blank" rel="noopener">Fazer pedido ↗</a>
+      <a class="btn btn-primary" href="#pedir">Fazer pedido ↗</a>
     </nav>
+
   </div>
 </header>
 
 <main>
+
 <section class="hero" id="inicio">
   <div class="container">
-    <div class="hero-content reveal">
-      <span class="eyebrow">Comida de verdade, feita com carinho</span>
-      <h1>Um prato de<br><em>amor e tradição.</em></h1>
+    <div class="hero-content">
+
+      <span class="eyebrow">Tradição que dá água na boca</span>
+
+      <h1>
+        O verdadeiro sabor de uma
+        <em>boa feijoada.</em>
+      </h1>
+
       <p class="hero-description">
-        Na Feijuca Carioca, cada detalhe importa. Uma feijoada cheia de sabor,
-        acompanhamentos que completam a experiência e aquele carinho de comida
-        feita para reunir pessoas ao redor da mesa.
+        Feita com carinho, preparada com cuidado e servida com aquele
+        gostinho de comida brasileira que aproxima as pessoas.
+        Na Feijuca Carioca, cada detalhe importa.
       </p>
 
       <div class="hero-actions">
-        <a class="btn" href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20o%20card%C3%A1pio%20da%20Feijuca%20Carioca." target="_blank" rel="noopener">🍲 Consultar cardápio</a>
-        <a class="btn btn-outline" href="#historia">Conheça nossa essência ↓</a>
+        <a class="btn btn-primary" href="#pedir">
+          Quero pedir minha feijoada <span>↗</span>
+        </a>
+        <a class="btn btn-outline" href="#cardapio">
+          Conhecer o cardápio
+        </a>
       </div>
 
-      <div class="hero-meta">
-        <span><b>★★★★★</b> 5,0 no Google · 7 avaliações</span>
-        <span>♥ Preparado com carinho</span>
-        <span>🛵 Delivery</span>
+      <div class="hero-proof">
+        <div class="proof-item">
+          <strong class="stars">★★★★★</strong>
+          Avaliação no Google
+        </div>
+        <div class="proof-item">
+          <strong>5,0 de 5</strong>
+          7 avaliações registradas
+        </div>
+        <div class="proof-item">
+          <strong>Delivery</strong>
+          Consulte a disponibilidade
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<div class="strip">
+<div class="flavor-strip">
   <div class="container strip-inner">
-    <span>Feito com amor</span><span class="dot">✦</span>
-    <span>Sabor de verdade</span><span class="dot">✦</span>
-    <span>Tradição à mesa</span><span class="dot">✦</span>
-    <span>Feijuca Carioca</span>
+    <span>Feito com amor</span>
+    <span>Tempero brasileiro</span>
+    <span>Tradição à mesa</span>
   </div>
 </div>
 
-<section id="historia">
+<section class="story" id="historia">
   <div class="container story-grid">
-    <div class="story-image reveal">
+
+    <div class="story-visual reveal">
       <img
+        class="story-image"
         src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
-        alt="Mesa com comida preparada para compartilhar"
+        alt="Prato de comida preparado com ingredientes frescos"
         loading="lazy">
-      <div class="image-note">Comida boa tem gosto de cuidado. ♥</div>
+
+      <div class="story-note">
+        <strong>Feito com carinho ❤️</strong>
+        <span>Porque comida boa também é afeto.</span>
+      </div>
     </div>
 
-    <div class="story-copy reveal">
-      <span class="eyebrow">Nossa essência</span>
-      <h2>Mais que comida.<br><span>Uma experiência.</span></h2>
+    <div class="story-content reveal">
+      <span class="eyebrow">Muito além do prato</span>
+
+      <h2>Comida que tem sabor de encontro.</h2>
+
       <p>
-        A Feijuca Carioca nasceu da paixão por comida saborosa e pelo prazer
-        de compartilhar bons momentos. Acreditamos que uma boa refeição vai
-        além do prato: ela reúne, acolhe e cria lembranças.
+        Uma boa feijoada não é apenas uma refeição. É motivo para reunir
+        a família, conversar com os amigos e aproveitar os pequenos
+        momentos da vida.
       </p>
+
       <p>
-        Nossa proposta é levar até você o aconchego de uma feijoada bem servida,
-        com acompanhamentos que combinam e aquele cuidado que faz toda a
-        diferença. Cada pedido merece atenção, respeito e muito carinho.
+        A proposta da Feijuca Carioca é valorizar esse espírito:
+        comida brasileira, sabor marcante e carinho em cada preparo.
       </p>
 
       <div class="story-points">
+
         <div class="story-point">
-          <strong>Feito com carinho</strong>
-          <small>Cuidado em cada detalhe.</small>
+          <span class="point-icon">♡</span>
+          <div>
+            <strong>Feito com amor e carinho</strong>
+            <p>Atenção ao preparo e à experiência de quem recebe.</p>
+          </div>
         </div>
+
         <div class="story-point">
-          <strong>Sabor que acolhe</strong>
-          <small>Para aproveitar e compartilhar.</small>
+          <span class="point-icon">♨</span>
+          <div>
+            <strong>Paixão pela feijoada</strong>
+            <p>O sabor brasileiro é a estrela da nossa proposta.</p>
+          </div>
         </div>
+
         <div class="story-point">
-          <strong>Tradição brasileira</strong>
-          <small>O prazer de comer bem.</small>
+          <span class="point-icon">♧</span>
+          <div>
+            <strong>Seu momento, sua mesa</strong>
+            <p>Uma refeição especial para compartilhar com quem você gosta.</p>
+          </div>
         </div>
-        <div class="story-point">
-          <strong>Atendimento próximo</strong>
-          <small>Fale diretamente conosco.</small>
-        </div>
+
       </div>
     </div>
+
   </div>
 </section>
 
 <section class="menu-section" id="cardapio">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Nosso cardápio</span>
-      <h2>Sabores que dão<br><span>água na boca.</span></h2>
-      <p>
-        O destaque é a nossa feijoada, acompanhada de sabores que combinam
-        com uma refeição especial. Consulte pelo WhatsApp as opções disponíveis,
-        os tamanhos, os valores e a disponibilidade do dia.
+
+    <div class="section-heading center reveal">
+      <span class="eyebrow">Nossa especialidade</span>
+      <h2>Um convite para comer bem.</h2>
+      <p class="section-copy">
+        A feijoada é a protagonista por aqui. Conheça algumas sugestões
+        de apresentação para o cardápio e consulte pelo WhatsApp
+        quais opções estão disponíveis.
       </p>
     </div>
 
     <div class="menu-grid">
+
       <article class="food-card reveal">
-        <div class="food-photo">
+        <div class="food-image-wrap">
           <img
+            class="food-image"
             src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
-            alt="Prato de comida brasileira com diferentes acompanhamentos"
+            alt="Feijoada brasileira com acompanhamentos"
             loading="lazy">
+          <span class="food-tag">A clássica</span>
         </div>
-        <div class="food-info">
-          <span class="food-tag">Nosso destaque</span>
-          <h3>Feijoada Carioca</h3>
+
+        <div class="food-body">
+          <h3>Feijoada tradicional</h3>
           <p>
-            Uma refeição cheia de personalidade, inspirada na tradição brasileira.
-            Consulte a composição, os tamanhos e as opções disponíveis.
+            A clássica combinação de feijão-preto e carnes,
+            acompanhada dos complementos tradicionais da feijoada.
           </p>
           <div class="food-bottom">
-            <small>Consulte o valor</small>
-            <a href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Quero%20saber%20os%20tamanhos%20e%20valores%20da%20feijoada." target="_blank" rel="noopener">Consultar ↗</a>
+            <span>Consulte o tamanho e o preço</span>
+            <a class="food-order" href="#pedir"
+              data-order="Feijoada tradicional">Consultar ↗</a>
           </div>
         </div>
       </article>
 
       <article class="food-card reveal">
-        <div class="food-photo">
+        <div class="food-image-wrap">
           <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
-            alt="Acompanhamentos frescos servidos em uma refeição"
+            class="food-image"
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+            alt="Feijão-preto preparado em uma refeição brasileira"
             loading="lazy">
+          <span class="food-tag">Para compartilhar</span>
         </div>
-        <div class="food-info">
-          <span class="food-tag">Para acompanhar</span>
+
+        <div class="food-body">
+          <h3>Feijoada para a família</h3>
+          <p>
+            Uma sugestão para reunir todo mundo à mesa.
+            Consulte as porções disponíveis e os acompanhamentos.
+          </p>
+          <div class="food-bottom">
+            <span>Consulte as porções</span>
+            <a class="food-order" href="#pedir"
+              data-order="Feijoada para a família">Consultar ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="food-card reveal">
+        <div class="food-image-wrap">
+          <img
+            class="food-image"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
+            alt="Acompanhamentos frescos para uma refeição"
+            loading="lazy">
+          <span class="food-tag">Os complementos</span>
+        </div>
+
+        <div class="food-body">
           <h3>Acompanhamentos</h3>
           <p>
-            Farofa, couve e outros acompanhamentos podem completar sua refeição.
-            Confirme pelo WhatsApp quais opções acompanham o pedido.
+            Couve, farofa, arroz e outros acompanhamentos que
+            combinam com uma boa feijoada. Consulte as opções do dia.
           </p>
           <div class="food-bottom">
-            <small>Consulte disponibilidade</small>
-            <a href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Quais%20acompanhamentos%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener">Consultar ↗</a>
+            <span>Consulte a disponibilidade</span>
+            <a class="food-order" href="#pedir"
+              data-order="Acompanhamentos da feijoada">Consultar ↗</a>
           </div>
         </div>
       </article>
 
-      <article class="food-card reveal">
-        <div class="food-photo">
-          <img
-            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
-            alt="Refeição servida para compartilhar à mesa"
-            loading="lazy">
-        </div>
-        <div class="food-info">
-          <span class="food-tag">Seu momento especial</span>
-          <h3>Peça para compartilhar</h3>
-          <p>
-            Quer reunir a família ou aproveitar uma refeição com amigos?
-            Converse conosco para conhecer as opções e quantidades disponíveis.
-          </p>
-          <div class="food-bottom">
-            <small>Consulte as opções</small>
-            <a href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20as%20op%C3%A7%C3%B5es%20para%20compartilhar." target="_blank" rel="noopener">Consultar ↗</a>
-          </div>
-        </div>
-      </article>
     </div>
 
     <p class="menu-disclaimer">
-      Cardápio ilustrativo. Itens, acompanhamentos, tamanhos, preços e disponibilidade
-      devem ser confirmados diretamente com a Feijuca Carioca.
+      As imagens são ilustrativas. Itens, acompanhamentos, porções,
+      preços e disponibilidade devem ser confirmados diretamente com o estabelecimento.
     </p>
+
   </div>
 </section>
 
-<section id="diferenciais">
+<section class="values">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">O que importa para nós</span>
-      <h2>O carinho está<br><span>nos detalhes.</span></h2>
-      <p>Uma boa refeição é feita de sabor, atenção e vontade de proporcionar um momento especial.</p>
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">O que torna especial</span>
+      <h2>O segredo está nos detalhes.</h2>
+      <p class="section-copy">
+        A experiência de uma boa refeição começa muito antes da
+        primeira garfada.
+      </p>
     </div>
 
     <div class="values-grid">
+
       <article class="value-card reveal">
-        <div class="value-icon">♥</div>
-        <h3>Feito com amor</h3>
+        <div class="value-icon">❤️</div>
+        <h3>Carinho em cada preparo</h3>
         <p>
-          Acreditamos no cuidado em cada etapa e no valor de preparar uma refeição
-          que deixe uma boa lembrança.
+          Acreditamos que uma comida especial começa com cuidado,
+          dedicação e respeito por quem vai saboreá-la.
         </p>
       </article>
 
       <article class="value-card reveal">
         <div class="value-icon">🍲</div>
-        <h3>Sabor brasileiro</h3>
+        <h3>Alma brasileira</h3>
         <p>
-          A feijoada é um clássico que combina tradição, bons acompanhamentos
-          e o prazer de sentar à mesa.
+          A feijoada representa tradição, sabor e aquela vontade
+          de sentar à mesa com as pessoas queridas.
         </p>
       </article>
 
       <article class="value-card reveal">
-        <div class="value-icon">☀</div>
-        <h3>Momentos especiais</h3>
+        <div class="value-icon">🛵</div>
+        <h3>Praticidade para pedir</h3>
         <p>
-          Para um almoço gostoso, um encontro em família ou simplesmente
-          para matar a vontade de comer bem.
+          Entre em contato pelo WhatsApp para consultar o cardápio,
+          a disponibilidade e as condições de entrega.
         </p>
       </article>
+
     </div>
   </div>
 </section>
 
-<section id="galeria" class="menu-section">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Um convite à mesa</span>
-      <h2>Deu vontade?<br><span>A gente entende.</span></h2>
-      <p>
-        Confira algumas imagens ilustrativas de comida e inspire-se.
-        As fotos reais dos pratos da Feijuca Carioca podem ser adicionadas
-        para mostrar aos clientes exatamente o que vão receber.
+<section class="review-section" id="avaliacoes">
+  <div class="container review-layout">
+
+    <div class="reveal">
+      <span class="eyebrow">Quem conhece, avalia</span>
+      <div class="rating-number">5,0<span style="font-size:2rem">/5</span></div>
+      <div class="stars" style="font-size:1.4rem">★★★★★</div>
+      <p class="rating-caption">
+        Nota exibida no perfil do Google Maps enviado como referência:
+        7 avaliações.
       </p>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Comida preparada para uma refeição especial" loading="lazy">
-        <span class="gallery-label">Sabor para compartilhar</span>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=85" alt="Ingredientes frescos e coloridos" loading="lazy">
-        <span class="gallery-label">Cores e sabores</span>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=85" alt="Ingredientes para preparar comida" loading="lazy">
-        <span class="gallery-label">Cuidado na cozinha</span>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85" alt="Refeição servida à mesa" loading="lazy">
-        <span class="gallery-label">Feito para aproveitar</span>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=85" alt="Mesa com diferentes pratos de comida" loading="lazy">
-        <span class="gallery-label">Momentos deliciosos</span>
-      </div>
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>
+        “A melhor feijoada é aquela que transforma uma refeição
+        em um momento especial.”
+      </blockquote>
+      <small>
+        O sabor da tradição merece um lugar à mesa.
+        <br>Feijuca Carioca
+      </small>
     </div>
 
-    <p class="menu-disclaimer">
-      As imagens desta demonstração são ilustrativas e não devem ser confundidas
-      com fotografias dos pratos reais do estabelecimento.
-    </p>
   </div>
 </section>
 
-<section id="avaliacoes">
+<section class="delivery" id="pedir">
   <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Quem conhece, recomenda</span>
-      <h2>Uma reputação<br><span>que merece destaque.</span></h2>
-      <p>
-        No perfil do Google mostrado na referência, a Feijuca Carioca aparece
-        com nota 5,0 e 7 avaliações. Confira as avaliações diretamente no perfil.
-      </p>
-    </div>
 
-    <div class="review-panel reveal">
+    <div class="delivery-panel reveal">
       <div>
-        <div class="rating-number">5,0</div>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <div class="rating-copy">Nota exibida no perfil · 7 avaliações</div>
-      </div>
-
-      <div class="review-quote">
-        “Cada refeição é uma oportunidade de compartilhar sabor, carinho e bons momentos.”
-        <p class="review-note">
-          Mensagem institucional da Feijuca Carioca — não é um depoimento de cliente.
+        <span class="eyebrow">Bateu a vontade?</span>
+        <h2>Sua próxima feijoada começa com uma mensagem.</h2>
+        <p>
+          Fale com a Feijuca Carioca para conferir o cardápio,
+          os preços, os tamanhos das porções e a disponibilidade
+          de delivery.
         </p>
       </div>
+
+      <div class="delivery-action">
+        <a class="btn btn-primary" id="mainWhatsapp"
+          href="https://wa.me/554196912047"
+          target="_blank" rel="noopener noreferrer">
+          Conversar pelo WhatsApp ↗
+        </a>
+        <small>Atendimento sujeito à disponibilidade do estabelecimento.</small>
+      </div>
     </div>
+
   </div>
 </section>
 
-<section class="order-section">
-  <div class="container order-box reveal">
-    <div>
-      <span class="eyebrow">Seu próximo almoço pode ser especial</span>
-      <h2>Bateu a vontade<br>de uma <span>feijuca?</span></h2>
-      <p>
-        Fale diretamente conosco, consulte o cardápio atualizado e confirme
-        os valores, a disponibilidade e as condições de entrega.
-      </p>
-    </div>
-
-    <a class="btn" href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Feijuca%20Carioca%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">💬 Pedir pelo WhatsApp ↗</a>
-  </div>
-</section>
-
-<section id="contato">
+<section class="location" id="contato">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Estamos à disposição</span>
-      <h2>Vamos conversar<br><span>sobre seu pedido?</span></h2>
-      <p>
-        Entre em contato para saber o cardápio do dia, os valores, o funcionamento
-        e as regiões atendidas pelo delivery.
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">Estamos por aqui</span>
+      <h2>Vamos conversar?</h2>
+      <p class="section-copy">
+        Entre em contato para saber mais sobre nossos pratos,
+        o atendimento e as opções para seu pedido.
       </p>
     </div>
 
-    <div class="contact-grid">
-      <div class="contact-card reveal">
-        <h3>Fale com a Feijuca</h3>
-        <p>
-          Tire suas dúvidas e consulte as opções disponíveis diretamente
-          com o estabelecimento.
-        </p>
+    <div class="location-grid">
 
-        <div class="contact-list">
-          <div class="contact-row">
-            <div class="symbol">☎</div>
-            <div>
-              <strong>Telefone / WhatsApp</strong>
-              <span>+55 41 9691-2047</span>
-            </div>
-          </div>
+      <div class="location-card reveal">
+        <h3>Informações de contato</h3>
 
-          <div class="contact-row">
-            <div class="symbol">🛵</div>
-            <div>
-              <strong>Atendimento</strong>
-              <span>Delivery — confirme a área atendida.</span>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="symbol">◷</div>
-            <div>
-              <strong>Horário exibido no perfil</strong>
-              <span>Sábado, a partir das 11h. Consulte possíveis atualizações.</span>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="symbol">⌖</div>
-            <div>
-              <strong>Localização</strong>
-              <span>Consulte a região e a cobertura de entrega pelo WhatsApp.</span>
-            </div>
+        <div class="info-row">
+          <span class="info-icon">☎</span>
+          <div>
+            <strong>WhatsApp / telefone</strong>
+            <p>+55 (41) 9691-2047</p>
           </div>
         </div>
 
-        <a class="btn" href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20o%20card%C3%A1pio%2C%20o%20hor%C3%A1rio%20e%20as%20regi%C3%B5es%20atendidas." target="_blank" rel="noopener">Entrar em contato ↗</a>
-      </div>
-
-      <div class="contact-card reveal">
-        <h3>Antes de fazer seu pedido</h3>
-        <p>
-          Para que tudo saia como você espera, confirme os detalhes diretamente
-          com a equipe.
-        </p>
-
-        <div class="contact-list">
-          <div class="contact-row">
-            <div class="symbol">01</div>
-            <div>
-              <strong>Confira o cardápio</strong>
-              <span>Consulte pratos, acompanhamentos e tamanhos disponíveis.</span>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="symbol">02</div>
-            <div>
-              <strong>Consulte os valores</strong>
-              <span>Os preços atualizados são informados pelo estabelecimento.</span>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="symbol">03</div>
-            <div>
-              <strong>Confirme a entrega</strong>
-              <span>Verifique sua região, o prazo e a taxa de delivery.</span>
-            </div>
-          </div>
-
-          <div class="contact-row">
-            <div class="symbol">04</div>
-            <div>
-              <strong>Combine o horário</strong>
-              <span>Confirme a disponibilidade antes de finalizar seu pedido.</span>
-            </div>
+        <div class="info-row">
+          <span class="info-icon">🛵</span>
+          <div>
+            <strong>Modalidade</strong>
+            <p>Delivery — confirme a área de entrega e as condições pelo WhatsApp.</p>
           </div>
         </div>
+
+        <div class="info-row">
+          <span class="info-icon">◷</span>
+          <div>
+            <strong>Horário informado</strong>
+            <p>Sábado, a partir das 11h, conforme o perfil do Google enviado.</p>
+          </div>
+        </div>
+
+        <p class="location-note">
+          O endereço completo, a região atendida e os demais horários
+          precisam ser confirmados com o estabelecimento antes da publicação oficial.
+        </p>
       </div>
+
+      <div class="location-visual reveal">
+        <div class="location-overlay">
+          <strong>Feijuca Carioca</strong>
+          <p>
+            Sabor brasileiro, carinho à mesa e uma feijoada
+            para deixar o seu dia mais gostoso.
+          </p>
+          <a class="btn btn-primary"
+            href="https://wa.me/554196912047"
+            target="_blank" rel="noopener noreferrer"
+            style="margin-top:17px">
+            Falar com a gente ↗
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 </main>
 
-<footer>
+<footer class="footer">
   <div class="container">
-    <div class="footer-main">
+
+    <div class="footer-top">
       <div>
-        <a href="#inicio" class="logo">
-          <div class="logo-icon">🍲</div>
-          <div class="logo-text">
-            Feijuca <span>Carioca</span>
-            <small>Sabor que abraça</small>
-          </div>
+        <a href="#inicio" class="brand">
+          <span class="brand-mark">🍲</span>
+          <span>
+            <span class="brand-name">Feijuca Carioca</span>
+            <span class="brand-caption">Sabor brasileiro</span>
+          </span>
         </a>
-        <p class="footer-note">
-          Feijuca Carioca — uma homenagem ao sabor da comida brasileira,
-          preparada com carinho e feita para compartilhar.
+
+        <p class="footer-message">
+          Feijoada, tradição e carinho em cada detalhe.
+          Porque bons momentos também se servem à mesa.
         </p>
       </div>
 
       <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="#inicio">Início</a>
         <a href="#historia">Nossa essência</a>
         <a href="#cardapio">Cardápio</a>
-        <a href="#galeria">Galeria</a>
+        <a href="#avaliacoes">Avaliações</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
 
     <div class="footer-bottom">
       <span>© <span id="year"></span> Feijuca Carioca. Todos os direitos reservados.</span>
-      <span>Desenvolvido por <strong>NoFace Empire</strong>.</span>
+      <a href="#inicio">Voltar ao topo ↑</a>
     </div>
+
   </div>
 </footer>
 
 <a class="whatsapp-float"
-   href="https://wa.me/554196912047?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Feijuca%20Carioca."
-   target="_blank"
-   rel="noopener"
-   aria-label="Falar com a Feijuca Carioca pelo WhatsApp">☏</a>
+  href="https://wa.me/554196912047"
+  target="_blank" rel="noopener noreferrer"
+  aria-label="Entrar em contato com a Feijuca Carioca pelo WhatsApp">
+  <span aria-hidden="true">◉</span>
+  Fazer pedido
+</a>
 
 <script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+  // Menu para celulares
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-});
-
-document.querySelectorAll("#navLinks a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Fechar menu" : "Abrir menu"
+    );
+    menuToggle.textContent = isOpen ? "✕" : "☰";
   });
-});
 
-document.getElementById("year").textContent = new Date().getFullYear();
-
-const revealElements = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
+  // Fecha o menu ao selecionar uma seção
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menu");
+      menuToggle.textContent = "☰";
     });
-  }, { threshold: 0.12 });
+  });
 
-  revealElements.forEach(element => observer.observe(element));
-} else {
-  revealElements.forEach(element => element.classList.add("visible"));
-}
+  // Animações de entrada
+  const revealItems = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add("visible"));
+  }
+
+  // Ano automático no rodapé
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Botões do cardápio iniciam uma mensagem personalizada
+  document.querySelectorAll("[data-order]").forEach(link => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const item = link.dataset.order;
+      const message = encodeURIComponent(
+        "Olá! Vim pelo site da Feijuca Carioca e gostaria de consultar a disponibilidade e o preço de: " + item + "."
+      );
+
+      window.open(
+        "https://wa.me/554196912047?text=" + message,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+  });
 </script>
 
 </body>
-                                              </html>
+</html>
